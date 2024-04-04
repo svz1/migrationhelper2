@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup File Downloads</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+</head>
+<body>
+
+    <div class="downloads">
+        <h2>Download Setup Files <p>Click to Copy</p> </h2>
+        
+        <!-- Hidden download links -->
+        <div class="download-link" onclick="copyText('link1')">
+            <p class="MobiControl 15.65">MobiControl 1565</p>
+            <input type="text" id="link1" value='start-bitstransfer -source "https://downloads.soti.net/MobiControl/MobiControl1565Setup_1018_release.exe" -destination "C:\cloud" '>
+        </div>
+
+        <div class="download-link" onclick="copyText('link2')">
+            <p class="file-name">Xsight 4.3.17.2</p>
+            <input type="text" id="link2" value=' start-bitstransfer -source "https://downloads.soti.net/SOTIXsight/SetupSOTIXSight-4.3.2.17.msi" -destination "C:\cloud" '>
+        </div>
+
+        <div class="download-link" onclick="copyText('link3')">
+            <p class="file-name">dot net hosting</p>
+            <input type="text" id="link3" value='start-bitstransfer -source "https://download.visualstudio.microsoft.com/download/pr/cab723a6-dc1f-4b3a-8675-34dc84a21306/1ee69c32da9ba78d80d65f9c067c4f68/dotnet-hosting-6.0.12-win.exe"
+            -destination "C:\cloud"   '>
+        </div>
+
+        <div class="download-link" onclick="copyText('link3')">
+            <p class="file-name">windows desktop runtime</p>
+            <input type="text" id="link3" value='start-bitstransfer -source "https://download.visualstudio.microsoft.com/download/pr/ba2ece7b-686a-4bda-b7d7-8cc3b8964d66/8eee13e44d90345d40c1b262c78aad6a/windowsdesktop-runtime-6.0.12-win-x64.exe"
+            -destination "C:\cloud"  '>
+        </div>
+
+        <!-- Add more download links as needed -->
+
+    </div>
+
+    <script>
+        function copyText(elementId) {
+            var textToCopy = document.getElementById(elementId).value;
+
+            // Create a temporary input element and set its value
+            var tempInput = document.createElement("input");
+            tempInput.setAttribute("value", textToCopy);
+            document.body.appendChild(tempInput);
+
+            // Select and copy the text
+            tempInput.select();
+            document.execCommand("copy");
+
+            // Remove the temporary input element
+            document.body.removeChild(tempInput);
+
+            // Optionally, provide user feedback (e.g., alert)
+            alert("Link copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
